@@ -17,5 +17,6 @@ export class PetComponent implements OnInit {
 
   removePet(pet: pet) {
     this.petService.removePet(pet)
+    console.log(pet)
   }
 }

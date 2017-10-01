@@ -12,12 +12,18 @@ import {APP_API} from '../../app.api'
 export class PetService {
   constructor(private http: Http){}
 
-  removePet(pet: pet): Observable<number> {
+  removePet(pet: pet): Observable<any> {
+    let body = JSON.stringify(pet)
+    console.log(body)
+
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.delete(`${APP_API}`,
-                            new RequestOptions({headers: headers}))
-                    .map(response => response.json())
-                    .map(pet => pet.id)
+
+    let options = new RequestOptions({
+       headers: headers,
+       body: body
+     })
+
+    return this.http.delete(`${APP_API}`, options)
   }
 }
