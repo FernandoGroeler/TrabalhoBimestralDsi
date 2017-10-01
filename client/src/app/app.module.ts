@@ -16,7 +16,8 @@ import { PetsService } from './pets/pets.service';
 import { RegisterpetComponent } from './pets/registerpet/registerpet.component';
 import { InputComponent } from './shared/input/input.component';
 import { RegisterPetService } from './pets/registerpet/registerpet.service';
-import { SuccessfullyPetComponent } from './successfully-pet/successfully-pet.component'
+import { SuccessfullyPetComponent } from './successfully-pet/successfully-pet.component';
+import { PetService } from './pets/pet/pet.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { SuccessfullyPetComponent } from './successfully-pet/successfully-pet.co
     FormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [PetsService, RegisterPetService],
+  providers: [PetsService, RegisterPetService, PetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
