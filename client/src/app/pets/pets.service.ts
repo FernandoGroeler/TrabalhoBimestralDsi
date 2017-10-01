@@ -15,6 +15,6 @@ export class PetsService {
   constructor(private http: Http){}
 
   pets(): Observable<pet[]> {
-    return this.http.get(`${APP_API}/pets`).map(response => response.json()).catch(ErrorHandler.handleError)
+    return this.http.get(`${APP_API}`).map(response => response.json()).catch(ErrorHandler.handleError)
   }
 }

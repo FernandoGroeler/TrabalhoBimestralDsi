@@ -15,9 +15,9 @@ export class RegisterPetService {
   addRegisterPet(registerpet: RegisterPet): Observable<number> {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.http.post(`${APP_API}/pets`,
+    return this.http.post(`${APP_API}`,
                           JSON.stringify(registerpet), new RequestOptions({headers: headers}))
-                    .map(response=> response.json())
+                    .map(response => response.json())
                     .map(registerpet => registerpet.id)
   }
 }
