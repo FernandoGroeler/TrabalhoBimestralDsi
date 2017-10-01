@@ -7,23 +7,17 @@ import 'rxjs/add/operator/map'
 import { pet } from './pet.model'
 
 import {APP_API} from '../../app.api'
+import {ErrorHandler} from '../../app.error-handler'
 
 @Injectable()
 export class PetService {
   constructor(private http: Http){}
 
-  removePet(pet: pet): Observable<any> {
-    let body = JSON.stringify(pet)
-    console.log(body)
-
+  removePet(pet: pet): Observable<number> {
     const headers = new Headers()
     headers.append('Content-Type', 'application/json')
-
-    let options = new RequestOptions({
-       headers: headers,
-       body: body
-     })
-
-    return this.http.delete(`${APP_API}`, options)
+    return this.http.delete(`${APP_API}`, new RequestOptions({headers: headers}))
+                    .map(response => response.json())
+                    .catch(ErrorHandler.handleError)
   }
 }

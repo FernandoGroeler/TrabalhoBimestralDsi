@@ -16,5 +16,4 @@ export class PetsComponent implements OnInit {
   ngOnInit() {
     this.petsService.pets().subscribe(pets => this.pets = pets)
   }
-
 }
