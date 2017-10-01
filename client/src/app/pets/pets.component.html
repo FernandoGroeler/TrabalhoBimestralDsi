@@ -1,0 +1,19 @@
+<section class="content-header">
+  <h1 class="page-header">
+    Todos os Pets
+  </h1>
+
+  <div class="row">
+    <div class="col-xs-12">
+       <button [routerLink]="['/registerpet']" class="btn btn-success pull-right">Incluir</button>
+    </div>
+  </div><br><br>
+</section>
+
+<section class="content">
+  <div class="row">
+    <div *ngFor="let pet of pets" class="col-sm-6 col-xs-12">
+      <app-pet [pet]="pet"></app-pet>
+    </div>
+  </div>
+</section>
