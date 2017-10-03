@@ -96,8 +96,8 @@ app.put("/api/animal", (req, res) => {
   })
 })
 
-app.delete("/api/animal", (req, res) => {
-  let id = req.body.id;
+app.delete("/api/animal/:id", (req, res) => {
+  let id = req.param("id");
 
   let client = getClient();
 

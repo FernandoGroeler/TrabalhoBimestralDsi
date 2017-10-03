@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable'
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
-import {pet} from "./pet/pet.model"
+import {Pet} from "./pet/pet.model"
 
 import {APP_API} from '../app.api'
 import {ErrorHandler} from '../app.error-handler'
@@ -14,7 +14,7 @@ import {ErrorHandler} from '../app.error-handler'
 export class PetsService {
   constructor(private http: Http){}
 
-  pets(): Observable<pet[]> {
+  pets(): Observable<Pet[]> {
     return this.http.get(`${APP_API}`).map(response => response.json()).catch(ErrorHandler.handleError)
   }
 }

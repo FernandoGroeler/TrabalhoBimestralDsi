@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {pet} from './pet/pet.model'
+import {Pet} from './pet/pet.model'
 import {PetsService} from './pets.service'
 
 @Component({
@@ -9,7 +9,7 @@ import {PetsService} from './pets.service'
 })
 export class PetsComponent implements OnInit {
 
-  pets: pet[]
+  pets: Pet[]
 
   constructor(private petsService: PetsService) { }
 
