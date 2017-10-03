@@ -18,6 +18,7 @@ import { InputComponent } from './shared/input/input.component';
 import { RegisterPetService } from './pets/registerpet/registerpet.service';
 import { SuccessfullyPetComponent } from './successfully-pet/successfully-pet.component';
 import { PetService } from './pets/pet/pet.service';
+import { ExcludedPetComponent } from './excluded-pet/excluded-pet.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PetService } from './pets/pet/pet.service';
     PetComponent,
     RegisterpetComponent,
     InputComponent,
-    SuccessfullyPetComponent
+    SuccessfullyPetComponent,
+    ExcludedPetComponent
   ],
   imports: [
     BrowserModule,
